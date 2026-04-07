@@ -1,0 +1,12 @@
+What was fixed:
+- Replaced deprecated GSAP trial import usage with standard GSAP import in src/components/utils/initialFX.ts
+- Removed obsolete custom declaration file for gsap-trial SplitText
+- Removed generated caches and local build/debug files from the package
+- Removed node_modules and dist so the project can be installed cleanly on the deployment machine
+
+Recommended deploy steps:
+1. npm install
+2. npm run build
+3. npm run dev   (for local preview)
+
+If npm has cached old packages, delete node_modules and package-lock.json, then run npm install again.
