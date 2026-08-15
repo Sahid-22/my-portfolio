@@ -53,7 +53,7 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {[
+          {([
             {
               name: "Dubai Real Estate Intelligence",
               category: "Analytics & Dashboarding",
@@ -84,7 +84,14 @@ const Work = () => {
               tools: "Python, Pandas, NumPy, Matplotlib",
               image: "/images/Fitbit Fitness Analysis.png",
             },
-          ].map((project, index) => (
+            {
+              name: "SportRadar Tennis Analytics",
+              category: "Sports Data Analytics",
+              tools: "Python, Streamlit, MySQL, SportRadar API",
+              image: "/images/SportRadar Tennis Analytics.jpg",
+              link: "https://tennis-analytics-jnnzryvyzeibcwvyezxaqq.streamlit.app/",
+            },
+          ] as { name: string; category: string; tools: string; image: string; link?: string }[]).map((project, index) => (
             <div className="work-box" key={index}>
               <div className="work-info">
                 <div className="work-title">
@@ -98,7 +105,7 @@ const Work = () => {
                 <h4>Tools and features</h4>
                 <p>{project.tools}</p>
               </div>
-              <WorkImage image={project.image} alt={project.name} />
+              <WorkImage image={project.image} alt={project.name} link={project.link} />
             </div>
           ))}
         </div>
